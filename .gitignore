@@ -1,0 +1,11 @@
+# build artifacts
+*.exe
+*.exe~
+*.log
+
+# web deps
+web/node_modules/
+node_modules/
+
+# local
+.DS_Store

@@ -1,0 +1,16 @@
+services:
+  copilot-go:
+    image: ghcr.io/starrykira/copilot2api-go:latest
+    container_name: copilot-go
+    restart: unless-stopped
+    ports:
+      - "3000:3000"   # Web Console
+      - "4141:4141"   # Proxy
+    volumes:
+      - copilot-data:/root/.local/share/copilot-api
+    environment:
+      - TZ=Asia/Shanghai
+
+volumes:
+  copilot-data:
+    driver: local

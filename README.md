@@ -113,12 +113,26 @@ Template di [`templates/`](templates/):
 ```
 copilot2api-go-setup/
 ├── README.md              ← ini
+├── src/                   ← source copilot2api-go (from StarryKira, MIT)
+│   ├── main.go
+│   ├── anthropic/  config/  copilot/  handler/  instance/  store/  auth/  web/
+│   ├── Dockerfile, go.mod, go.sum
+│   └── README.md          ← README asli upstream
 ├── docs/
 │   └── 9router-integration.md
 └── templates/
     ├── start-copilot.bat
     └── autostart.vbs
 ```
+
+Source di `src/` di-copy dari [`StarryKira/copilot2api-go`](https://github.com/StarryKira/copilot2api-go) (commit `4b913d5`, Jul 5 2026) — bisa di-build bareng:
+
+```bash
+cd src
+go build -o copilot-go.exe .
+```
+
+> ⚠️ `web/node_modules` TIDAK ikut di-commit (build artifact). Kalau mau build web UI: `cd src/web && npm install && npm run build` (atau `bun install` — lihat `web/bun.lock`).
 
 ## ⚠️ Keamanan
 
